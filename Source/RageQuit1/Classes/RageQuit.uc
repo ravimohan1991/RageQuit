@@ -219,7 +219,7 @@ class RageQuit extends Mutator config (RageQuit);
 
  function EvaluateScoreEvent(PlayerReplicationInfo Scorer){
 
-    if(Scorer.Team.Score > TSInfo[Scorer.Team.TeamIndex].Score){// Ok this is scoring event
+    if(Scorer.Team.Score > TSInfo[Scorer.Team.TeamIndex].Score && Scorer.Team.Score < Level.Game.GoalScore && !Level.Game.bOverTime){// Ok this is scoring event
        TSInfo[Scorer.Team.TeamIndex].Score = Scorer.Team.Score;
        TSInfo[Scorer.Team.TeamIndex].ScoreTime = Level.TimeSeconds;
       // Level.Game.Broadcast(none, Scorer.PlayerName@"Scored for the team!");

@@ -74,7 +74,7 @@ class RageQuitGameRules extends GameRules;
 
  function bool CheckScore(PlayerReplicationInfo Scorer){
 
-	if ( (NextGameRules != None && NextGameRules.CheckScore(Scorer)) || Level.Game.GameReplicationInfo.Winner != none)
+	if ( (NextGameRules != None && NextGameRules.CheckScore(Scorer)))
 		return true;// See if game ended. Then disconnecting is not ragequitting
 	// The Game in progress
     RQMut.EvaluateScoreEvent(Scorer);
